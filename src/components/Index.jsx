@@ -1,4 +1,4 @@
-import data from "./data";
+/* import data from "./data";
 
 import React, { useState } from 'react'
 
@@ -39,4 +39,29 @@ const Index = () => {
 
 }
 
-export default Index
+export default Index */
+
+//practice of accordian
+import { useState } from "react";
+import data from "./data";
+
+const Index = () => {
+  const [explain, setexplain] = useState(null);
+  const handle = (id) => {
+    setexplain(id===explain?null:id);
+    console.log(id)
+    console.log(explain)
+  };
+  return (
+    <div>
+      {data.map((item) => (
+        <div onClick={() => handle(item.id)}>{item.question}{explain===item.id?item.answer:null}</div>))
+      
+      
+      }
+        
+    </div>
+  );
+};
+
+export default Index;
