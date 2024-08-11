@@ -67,7 +67,7 @@ const Index = () => {
 export default Index; */
 
 
-import { useState } from "react";
+/* import { useState } from "react";
 import data  from "./data";
 
 const Index=()=>{
@@ -87,4 +87,29 @@ return(
 )
 }
 
-export default Index
+export default Index */
+
+//create accordian
+
+import { useState } from "react";
+import data from "./data"
+
+
+const Index=()=>{
+    const [answer,setanswer] = useState(null)
+function showanswer(id){
+    setanswer(id===answer?null:id)
+}
+    return(
+        <div >
+            {
+                data&&data.length>0?
+                (data.map((item)=><h1 onClick={()=>showanswer(item.id)} key={item.id}>{item.question}
+                {item.id===answer?item.answer:null}</h1>)):
+                (<h1>Data Not Found</h1>)
+            }
+        </div>
+    )
+}
+
+export default Index;
