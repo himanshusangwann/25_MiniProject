@@ -91,7 +91,7 @@ export default Index */
 
 //create accordian
 
-import { useState } from "react";
+/*  import { useState } from "react";
 import data from "./data"
 
 
@@ -112,4 +112,30 @@ function showanswer(id){
     )
 }
 
-export default Index;
+export default Index; 
+
+
+*/
+import data from "./data"
+
+import React, { useState } from 'react'
+
+const index = () => {
+    const [answer,setanswer] =useState(null)
+    function openansewer(id){
+        setanswer(answer ===id?null:id)
+    }
+
+  return (
+    <div>
+      {
+        data&&data.length>0?
+        data.map((item)=><h1 onClick={()=>openansewer(item.id)} key={item.id}>{item.question}
+        {item.id===answer?item.answer:null}</h1>):
+        <h1>No data found</h1>
+      }
+    </div>
+  )
+}
+
+export default index

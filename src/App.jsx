@@ -12,8 +12,8 @@ function App() {
 
   return (
     <>
-    <Index/>
-    <PaginationTest/>
+  <Index/>
+  <PaginationTest/>
     </>
   )
 }
