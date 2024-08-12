@@ -130,7 +130,7 @@ const index = () => {
     <div>
       {
         data&&data.length>0?
-        data.map((item)=><h1 onClick={()=>openansewer(item.id)} key={item.id}>{item.question}
+        data.map((item)=><h1 onClick={()=>openansewer(item.id)} key={item.id}>{item.question}<span>+</span>
         {item.id===answer?item.answer:null}</h1>):
         <h1>No data found</h1>
       }
